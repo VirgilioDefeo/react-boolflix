@@ -33,26 +33,16 @@ function App() {
     ])
       .then(
         axios.spread((movieRes, tvRes) => {
-          const movieResults = movieRes.data.results.map(item => ({
-            id: item.id,
-            title: item.title,
-            originalTitle: item.original_title,
-            language: item.original_language,
-            vote_average: item.vote_average,
-            poster_path: item.poster_path,
-            overview: item.overview,
-            type: 'movie',
-          }));
-          const tvResults = tvRes.data.results.map(item => ({
-            id: item.id,
-            title: item.name,
-            originalTitle: item.original_name,
-            language: item.original_language,
-            vote_average: item.vote_average,
-            poster_path: item.poster_path,
-            overview: item.overview,
-            type: 'tv',
-          }));
+const movieResults = movieRes.data.results.map(item => ({
+  ...item,
+  type: 'movie',
+}));
+
+const tvResults = tvRes.data.results.map(item => ({
+  ...item,
+  type: 'tv',
+}));
+
           setResults([...movieResults, ...tvResults]);
           setLoading(false);
         })
