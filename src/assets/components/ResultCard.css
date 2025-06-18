@@ -1,0 +1,218 @@
+.results-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #000;
+}
+
+.card {
+  width: 200px;
+  color: white;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.poster-wrapper {
+  position: relative;
+}
+
+.poster {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  opacity: 0;
+  padding: 1rem;
+  overflow-y: auto;
+  transition: opacity 0.3s;
+  font-size: 0.9rem;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.info {
+  padding: 0.5rem 1rem 1rem;
+  text-align: center;
+}
+
+.original-title {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.meta {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.flag {
+  width: 24px;
+  height: auto;
+  border-radius: 3px;
+}
+
+.stars {
+  color: gold;
+  font-size: 1rem;
+}
+
+/* Per messaggi centrati */
+.center {
+  text-align: center;
+  padding: 2rem;
+}
+
+.error {
+  color: red;
+}
+.section {
+  margin: 2rem 0;
+}
+
+.section-title {
+  color: white;
+  font-size: 1.5rem;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 0 2rem;
+  scroll-snap-type: x mandatory;
+}
+
+.card {
+      transition: transform 0.3s ease, box-shadow 0.3s;
+  flex: 0 0 auto;
+  width: 200px;
+  scroll-snap-align: start;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  color: white;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.card:hover .poster {
+  filter: brightness(0.7);
+}
+.poster-wrapper {
+  position: relative;
+}
+
+.poster {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+ .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.85);
+  color: white;
+  opacity: 0;
+  padding: 1rem;
+  transition: opacity 0.3s;
+  font-size: 0.9rem;
+  overflow-y: auto;
+  
+} 
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+}
+
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.info {
+  padding: 0.5rem 1rem 1rem;
+  text-align: center;
+}
+
+.original-title {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.meta {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.flag {
+  width: 24px;
+  height: auto;
+  border-radius: 3px;
+}
+
+.stars {
+  color: gold;
+  font-size: 1rem;
+}
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .card {
+    width: 150px;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .slider-arrow {
+    font-size: 1.5rem;
+  }
+}
