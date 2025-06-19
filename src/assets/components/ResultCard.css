@@ -1,54 +1,48 @@
-.results-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-  padding: 2rem;
-  background-color: #000;
-}
-
-.card {
+.flip-card {
+  background-color: transparent;
   width: 200px;
-  color: white;
-  background-color: #1e1e1e;
-  border-radius: 8px;
-  overflow: hidden;
+  height: 300px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
   position: relative;
-  transition: transform 0.3s;
-}
-
-.card:hover {
-  transform: scale(1.05);
-}
-
-.poster-wrapper {
-  position: relative;
-}
-
-.poster {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  text-align: left;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
 }
 
-.overlay {
+.flip-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  opacity: 0;
-  padding: 1rem;
-  overflow-y: auto;
-  transition: opacity 0.3s;
-  font-size: 0.9rem;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.card:hover .overlay {
-  opacity: 1;
+.flip-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
+
+.flip-card-back {
+  background-color: #111;
+  color: white;
+  transform: rotateY(180deg);
+  padding: 1rem;
+  font-size: 0.8rem;
+  overflow-y: auto;
+}
+
 
 .info {
   padding: 0.5rem 1rem 1rem;

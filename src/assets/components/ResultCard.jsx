@@ -15,11 +15,20 @@ const ResultCard = ({ item }) => {
   const flagUrl = `https://flagcdn.com/w40/${language === 'en' ? 'gb' : language}.png`;
 
   return (
+
     <div className="card fade-in">
       <div className="poster-wrapper">
         <img src={imageUrl} alt={title} className="poster" />
-        <div className="overlay">
-          <p className="overview">{item.overview || "Nessuna descrizione disponibile."}</p>
+  <div className="flip-card-back">
+              <p className="overview">{item.overview || "Nessuna descrizione disponibile."}</p>
+             {/* 👥 Cast – [MILESTONE 5] */}
+          {item.cast?.length > 0 && (
+            <p className="cast"><strong>Cast:</strong> {item.cast.join(', ')}</p>
+          )}
+          {/* 🎭 Generi – [MILESTONE 5] */}
+          {item.genres?.length > 0 && (
+            <p className="genres"><strong>Generi:</strong> {item.genres.join(', ')}</p>
+          )}
         </div>
       </div>
       <div className="info">
